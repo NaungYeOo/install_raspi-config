@@ -4,7 +4,6 @@ if [ "$(whoami)" != "root" ]; then
   whiptail --msgbox "Sorry you are not root. You must type: sudo sh install.sh" $WT_HEIGHT $WT_WIDTH
   exit
 fi
-
 # Check if raspi-config is installed
 if [ $(dpkg-query -W -f='${Status}' raspi-config 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
   whiptail --msgbox "Raspi-config is already installed, try upgrading it within raspi-config..." 10 60
